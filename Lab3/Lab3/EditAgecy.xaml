@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="Lab3.EditAgecy"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lab3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    
+    <Grid>
+        <StackPanel>
+            <TextBox  x:Name="agencyEmailTb" PlaceholderText="Email" Margin="20" />
+            <TextBox x:Name="agencyNameTb"  PlaceholderText="Name" Margin="20, 0, 20, 0"/>
+        </StackPanel>
+        <CommandBar HorizontalAlignment="Stretch" Margin="0,582,0,0" VerticalAlignment="Top">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+
+            <AppBarButton Name="btnAccept" Icon="Accept" Label="Update" Click="BtnAccept_Click"/>
+            <AppBarButton Name="btnDelete" Icon="Delete" Label="Delete" Click="BtnDelete_Click"/>
+        </CommandBar>
+
+    </Grid>
+</Page>

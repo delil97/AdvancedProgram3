@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="Lab3.MainPage"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lab3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Name="btnAdd"  Icon="Add" Label="Add New"  Click="btnAdd_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid>
+        <ListBox x:Name="agencyList" Width="Auto" Margin="0,12,0,0" VerticalAlignment="Top" SelectionChanged="AgencyList_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,0,0,17">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="1"  Grid.Column="0" Text="Name: " />
+                        <TextBlock Grid.Row="1" Text="{Binding Name}" TextWrapping="NoWrap" Margin="6,12,0,0" Style="{ThemeResource CaptionTextBlockStyle }" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"  Grid.Column="1"/>
+                        <TextBlock Grid.Row="0"  Grid.Column="0" Text="Agency Email: " />
+                        <TextBlock Grid.Row="0" Text="{Binding Email}" TextWrapping="Wrap"  Margin="12,0,12,6"  Style="{ThemeResource SubheaderTextBlockStyle }" Grid.Column="1" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+    </Grid>
+</Page>
+
